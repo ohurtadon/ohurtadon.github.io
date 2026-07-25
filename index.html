@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oscar Hurtado — Ingeniero de Software Senior &amp; Arquitecto Cloud &amp; AI</title>
+<meta name="description" content="Ingeniero de software con 12+ años de experiencia en arquitecturas escalables en la nube e IA. Desarrollo a la medida desde Guanacaste, Costa Rica.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CR">
+<meta property="og:title" content="Oscar Hurtado — Ingeniero de Software Senior &amp; Arquitecto Cloud &amp; AI">
+<meta property="og:description" content="Software a la medida, arquitecturas cloud e IA aplicada para negocios reales.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oscar Hurtado — Ingeniero de Software Senior &amp; Arquitecto Cloud &amp; AI">
+<meta name="twitter:description" content="Software a la medida, arquitecturas cloud e IA aplicada para negocios reales.">
+<link rel="icon" type="image/webp" href="favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070A0E;
+    --bg-2:#0F151C;
+    --panel:#111820;
+    --line:#212A34;
+    --line-soft:#1A222B;
+    --muted:#8C97A3;
+    --text:#F4F7FA;
+    --text-dim:#D7DCE2;
+
+    --blue:#1FA9DE;
+    --blue-strong:#1487B8;
+    --blue-soft:#7FC9EA;
+    --navy:#0B2C57;
+
+    --chip:#F2F4F7;
+
+    --display:'Fraunces', serif;
+    --body:'Space Grotesk', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+
+    --wrap:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--blue);color:var(--bg);}
+  :focus-visible{outline:2px solid var(--blue-soft);outline-offset:3px;border-radius:2px;}
+
+  .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 28px;}
+
+  h1,h2,h3{font-family:var(--body);font-weight:700;line-height:1.08;margin:0;color:var(--text);}
+  h1 em, h2 em{font-family:var(--display);font-style:italic;font-weight:500;color:var(--blue-soft);}
+  p{margin:0;}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:16px;height:1px;background:var(--blue);display:inline-block;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(7,10,14,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo-chip{
+    display:inline-flex;align-items:center;padding:0;transition:transform .2s ease;
+  }
+  .logo-chip:hover{transform:translateY(-1px);}
+  .logo-chip img{height:42px;width:auto;display:block;}
+  .nav-links{display:flex;gap:34px;align-items:center;font-size:14.5px;}
+  .nav-links a{color:var(--muted);transition:color .2s ease;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    font-family:var(--mono);font-size:13px;color:#fff !important;
+    background:var(--blue);padding:9px 18px;border-radius:100px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .nav-cta:hover{background:var(--blue-strong);transform:translateY(-1px);}
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:104px 0 96px;}
+  .hero-single{max-width:900px;}
+  .badges-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
+  .pill-badge{
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    color:var(--muted);border:1px solid var(--line);border-radius:100px;
+    padding:9px 16px;display:inline-flex;align-items:center;gap:9px;
+  }
+  .dot-live{
+    width:7px;height:7px;border-radius:50%;background:var(--blue);flex-shrink:0;
+    box-shadow:0 0 0 3px rgba(31,169,222,.18), 0 0 12px 1px rgba(31,169,222,.55);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.45;}}
+
+  .hero h1{font-size:clamp(34px,4.8vw,54px);}
+  .hero-sub{
+    margin-top:26px;max-width:640px;color:var(--muted);font-size:17.5px;
+  }
+  .hero-sub strong{color:var(--text-dim);font-weight:600;}
+
+  .cases-box{
+    margin-top:34px;border:1px solid var(--line);border-radius:12px;
+    padding:16px 20px;font-family:var(--mono);font-size:13px;color:var(--muted);
+    display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+    max-width:fit-content;
+  }
+  .cases-box .cases-label{color:var(--text-dim);letter-spacing:.04em;}
+  .cases-box a{color:var(--blue);}
+  .cases-box a:hover{color:var(--blue-soft);}
+  .cases-box .sep{color:var(--line);}
+
+  .hero-actions{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:14px 26px;
+    border-radius:100px;font-size:14.5px;font-weight:600;font-family:var(--body);
+    border:1px solid transparent;cursor:pointer;
+    transition:transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn-primary{background:var(--blue);color:#fff;}
+  .btn-primary:hover{background:var(--blue-strong);transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--line);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--text);transform:translateY(-2px);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:100px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.2vw,38px);margin-top:16px;}
+  .section-head p{color:var(--muted);margin-top:16px;font-size:16px;}
+
+  /* ---------- SERVICIOS ---------- */
+  #servicios{border-top:1px solid var(--line);background:var(--bg-2);}
+  .services-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  }
+  .service{background:var(--bg-2);padding:38px;transition:background .25s ease;}
+  .service:hover{background:var(--panel);}
+  .service .si{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;}
+  .service h3{font-size:21px;margin-top:14px;font-weight:600;font-family:var(--body);}
+  .service p{margin-top:12px;color:var(--muted);font-size:15px;}
+
+  /* ---------- PORTFOLIO ---------- */
+  #portafolio{border-top:1px solid var(--line);}
+  .pf-card{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);
+    border-radius:20px;overflow:hidden;margin-bottom:32px;background:var(--panel);
+  }
+  .pf-card:nth-child(even) .pf-visual{order:2;}
+  .pf-visual{
+    position:relative;min-height:340px;background-size:cover;background-position:top center;
+    background-color:#000;
+  }
+  .pf-visual .frame-bar{
+    position:absolute;top:0;left:0;right:0;padding:10px 14px;
+    background:rgba(7,10,14,.55);backdrop-filter:blur(6px);display:flex;gap:6px;
+  }
+  .frame-bar span{width:8px;height:8px;border-radius:50%;background:rgba(244,247,250,.35);}
+  .pf-body{padding:46px;display:flex;flex-direction:column;justify-content:center;}
+  .pf-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);}
+  .pf-body h3{font-size:26px;margin-top:12px;font-family:var(--body);}
+  .pf-body p{color:var(--muted);margin-top:14px;font-size:15px;}
+  .pf-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+  .pf-tags span{
+    font-family:var(--mono);font-size:11px;color:var(--text-dim);
+    border:1px solid var(--line);padding:5px 11px;border-radius:100px;
+  }
+  .pf-link{margin-top:24px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--text);}
+  .pf-link:hover{color:var(--blue);}
+  .pf-link svg{width:14px;height:14px;transition:transform .2s ease;}
+  .pf-link:hover svg{transform:translate(3px,-3px);}
+
+  /* ---------- CONTACTO ---------- */
+  #contacto{text-align:center;padding:120px 0 100px;border-top:1px solid var(--line);background:var(--bg-2);}
+  #contacto .eyebrow{justify-content:center;}
+  #contacto h2{font-size:clamp(30px,5vw,50px);margin-top:18px;max-width:760px;margin-left:auto;margin-right:auto;font-family:var(--body);}
+  #contacto p.lead{color:var(--muted);max-width:520px;margin:20px auto 0;font-size:16.5px;}
+  .contact-actions{display:flex;justify-content:center;gap:16px;margin-top:38px;flex-wrap:wrap;}
+  .email-btn{font-family:var(--mono);font-size:15px;}
+  .contact-info{
+    margin-top:56px;display:flex;justify-content:center;gap:44px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:13px;color:var(--muted);
+  }
+  .contact-info strong{display:block;color:var(--text);font-family:var(--body);font-size:14.5px;font-weight:600;margin-bottom:4px;}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;}
+  .footer-row{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:12.5px;color:var(--muted);flex-wrap:wrap;gap:12px;
+  }
+  .footer-logo{display:inline-flex;align-items:center;}
+  .footer-logo img{height:24px;width:auto;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal,.dot-live{animation:none !important;transition:none !important;opacity:1 !important;transform:none !important;}
+  }
+
+  @media (max-width:900px){
+    .services-grid{grid-template-columns:1fr;}
+    .pf-card{grid-template-columns:1fr;}
+    .pf-card:nth-child(even) .pf-visual{order:0;}
+    .pf-visual{min-height:240px;}
+  }
+  @media (max-width:720px){
+    .nav-links{
+      position:fixed;top:74px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);
+      flex-direction:column;align-items:flex-start;padding:20px 28px 26px;gap:18px;
+      transform:translateY(-130%);transition:transform .3s ease;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+    .nav-toggle span{width:22px;height:2px;background:var(--text);display:block;}
+    section{padding:72px 0;}
+    .hero{padding:64px 0 56px;}
+    .contact-info{gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo-chip" aria-label="Inicio — Oscar Hurtado"><img src="oscar-hurtado-logo-white-cyan.png" alt="Oscar Hurtado" width="145" height="45"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto" class="nav-cta">Hablemos</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-single">
+      <div class="badges-row reveal">
+        <span class="pill-badge"><span class="dot-live"></span>Disponible para nuevos proyectos a la medida</span>
+        <span class="pill-badge">📍 Guanacaste, Costa Rica 🇨🇷</span>
+      </div>
+
+      <h1 class="reveal">Ingeniero de Software Senior &amp; <em>Arquitecto<br>Cloud &amp; AI</em></h1>
+
+      <p class="hero-sub reveal"><strong>12+ años de trayectoria</strong> diseñando e implementando soluciones de software escalables, arquitecturas robustas en la nube e integración directa de Inteligencia Artificial para potenciar negocios reales.</p>
+
+      <div class="cases-box reveal">
+        <span class="cases-label">CASOS REALES:</span>
+        <a href="https://raizvolcanica.com" target="_blank" rel="noopener">raizvolcanica.com ↗</a>
+        <span class="sep">·</span>
+        <a href="https://www.cameliamedical.com" target="_blank" rel="noopener">www.cameliamedical.com ↗</a>
+      </div>
+
+      <div class="hero-actions reveal">
+        <a href="#contacto" class="btn btn-primary">Cotizar proyecto a la medida →</a>
+        <a href="#portafolio" class="btn btn-ghost">Ver portafolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Servicios</div>
+        <h2>Qué puedo construir para tu negocio</h2>
+        <p>Software a la medida para operar, integrar y hacer crecer tu negocio: web, móvil, escritorio, APIs, IA y datos.</p>
+      </div>
+
+      <div class="services-grid reveal">
+        <div class="service">
+          <span class="si">→ PLATAFORMAS WEB</span>
+          <h3>Sitios y plataformas a la medida</h3>
+          <p>Plataformas web con arquitectura propia, pensadas para SEO, rendimiento y crecimiento — no una plantilla adaptada.</p>
+        </div>
+        <div class="service">
+          <span class="si">→ PRODUCTO SAAS</span>
+          <h3>SaaS multi-tenant</h3>
+          <p>Software que puedes vender a varios clientes desde una sola base: autenticación, datos aislados y facturación desde el diseño.</p>
+        </div>
+        <div class="service">
+          <span class="si">→ APLICACIONES</span>
+          <h3>Apps móviles y de escritorio</h3>
+          <p>Aplicaciones para equipos, clientes u operaciones internas, diseñadas para ofrecer una experiencia rápida y confiable en cada dispositivo.</p>
+        </div>
+        <div class="service">
+          <span class="si">→ INTEGRACIONES</span>
+          <h3>Integraciones y APIs</h3>
+          <p>Conecto tus sistemas, servicios y fuentes de datos para eliminar trabajo manual y crear flujos confiables entre plataformas.</p>
+        </div>
+        <div class="service">
+          <span class="si">→ INTELIGENCIA ARTIFICIAL</span>
+          <h3>Automatización e IA aplicada</h3>
+          <p>Chatbots, asistentes internos y automatizaciones conectadas a tus datos reales, no demos desconectadas del negocio.</p>
+        </div>
+        <div class="service">
+          <span class="si">→ DATOS</span>
+          <h3>Análisis y visualización de datos</h3>
+          <p>Transformo datos dispersos en reportes, tableros y análisis claros para tomar mejores decisiones con información real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section id="portafolio">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Portafolio</div>
+        <h2>Plataformas construidas de principio a fin</h2>
+        <p>Dos proyectos propios, en producción, que muestran el mismo enfoque: arquitectura sólida primero, producto pulido después.</p>
+      </div>
+
+      <!-- Raiz Volcanica -->
+      <div class="pf-card reveal">
+        <div class="pf-visual" style="background-image:url('raiz-volcanica-preview.webp');">
+          <div class="frame-bar"><span></span><span></span><span></span></div>
+        </div>
+        <div class="pf-body">
+          <span class="pf-kicker">Turismo regional · Next.js</span>
+          <h3>Raíz Volcánica</h3>
+          <p>Plataforma turística y ecológica que conecta volcanes, senderos, aguas termales, negocios locales y experiencias del corredor volcánico de Guanacaste. Incluye directorio de negocios, mapa interactivo, catálogo de flora y fauna, y gestión de contenido bilingüe (ES/EN).</p>
+          <div class="pf-tags">
+            <span>Next.js</span><span>SEO técnico</span><span>Mapa interactivo</span><span>Multi-idioma</span>
+          </div>
+          <a href="https://raizvolcanica.com" target="_blank" rel="noopener" class="pf-link">
+            Visitar raizvolcanica.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Camelia Medical -->
+      <div class="pf-card medical reveal">
+        <div class="pf-visual" style="background-image:url('camelia-medical-preview.webp');">
+          <div class="frame-bar"><span></span><span></span><span></span></div>
+        </div>
+        <div class="pf-body">
+          <span class="pf-kicker">SaaS multi-tenant · Salud</span>
+          <h3>Camelia Medical</h3>
+          <p>Plataforma SaaS de gestión clínica multi-tenant: cada clínica opera de forma aislada y segura sobre una misma base de código. Incluye agenda de citas, expedientes de pacientes, facturación y un asistente con IA para tareas administrativas del consultorio.</p>
+          <div class="pf-tags">
+            <span>PostgreSQL</span><span>Supabase</span><span>Multi-tenant</span><span>IA aplicada</span>
+          </div>
+          <a href="https://www.cameliamedical.com" target="_blank" rel="noopener" class="pf-link">
+            Visitar cameliamedical.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="eyebrow">Contacto</div>
+      <h2 class="reveal">¿Tenés una idea que necesita convertirse en software?</h2>
+      <p class="lead reveal">Escribime y conversemos sobre tu proyecto — arquitectura, alcance y cómo llevarlo a producción.</p>
+      <div class="contact-actions reveal">
+        <a href="mailto:ohurtadon@outlook.com" class="btn btn-primary email-btn">ohurtadon@outlook.com</a>
+        <a href="#portafolio" class="btn btn-ghost">Ver proyectos primero</a>
+      </div>
+      <div class="contact-info reveal">
+        <div><strong>Ubicación</strong>Guanacaste, Costa Rica</div>
+        <div><strong>Modalidad</strong>Remoto / proyectos a la medida</div>
+        <div><strong>Enfoque</strong>Cloud, arquitectura e IA aplicada</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span class="footer-logo"><img src="oscar-hurtado-logo-white-cyan.png" alt="Oscar Hurtado" width="145" height="45"> <span style="margin-left:10px;">© 2026</span></span>
+    <span>Guanacaste, Costa Rica</span>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  }));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
